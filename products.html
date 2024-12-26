@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - LUNA Apothecary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include the same styles as index.html -->
+    <style>
+        /* Copy all styles from index.html and add: */
+        .filter-buttons {
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--text);
+            margin: 0.5rem;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .product-grid {
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include the same navbar as index.html -->
+
+    <!-- Products Header -->
+    <section class="py-5 mt-5">
+        <div class="container">
+            <h1 class="text-center mb-5">Shop Our Products</h1>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-buttons text-center">
+                <button class="filter-btn active" data-category="all">All Products</button>
+                <button class="filter-btn" data-category="soap">Soaps</button>
+                <button class="filter-btn" data-category="candles">Candles</button>
+                <button class="filter-btn" data-category="bath_salts">Bath Salts</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="row" id="products-grid">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Include the same footer as index.html -->
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Load all products
+            function loadProducts(category = 'all') {
+                $.getJSON('data/products.json', function(data) {
+                    const filteredProducts = category === 'all' 
+                        ? data.products 
+                        : data.products.filter(product => product.category === category);
+                    
+                    const productsHtml = filteredProducts.map(product => `
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <img src="${product.image}" class="img-fluid mb-3" alt="${product.name}">
+                                <h3>${product.name}</h3>
+                                <p>${product.description}</p>
+                                <p class="price">$${product.price}</p>
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                            </div>
+                        </div>
+                    `).join('');
+                    
+                    $('#products-grid').html(productsHtml);
+                });
+            }
+
+            // Initial load
+            loadProducts();
+
+            // Filter functionality
+            $('.filter-btn').click(function() {
+                const category = $(this).data('category');
+                $('.filter-btn').removeClass('active');
+                $(this).addClass('active');
+                loadProducts(category);
+            });
+        });
+    </script>
+</body>
+</html>
