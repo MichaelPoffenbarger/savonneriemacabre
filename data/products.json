@@ -1,0 +1,147 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Gingerbread Soap Bar",
+        "category": "soap",
+        "price": 12.99,
+        "description": "Handcrafted soap with pure lavender essential oil and dried flowers",
+        "image": "img/savgingnobg.png",
+        "featured": true,
+        "ingredients": ["Olive Oil", "Coconut Oil", "Lavender Essential Oil", "Dried Lavender"],
+        "weight": "5 oz",
+        "inStock": true
+      },
+      {
+        "id": 2,
+        "name": "Rose Quartz Bath Salts",
+        "category": "bath_salts",
+        "price": 24.99,
+        "description": "Himalayan pink salt blend infused with rose quartz and essential oils",
+        "image": "img/savpeppcandlenobg.png",
+        "featured": true,
+        "ingredients": ["Himalayan Pink Salt", "Rose Essential Oil", "Rose Petals", "Rose Quartz Crystals"],
+        "weight": "16 oz",
+        "inStock": true
+      },
+      {
+        "id": 3,
+        "name": "Full Moon Ritual Candle",
+        "category": "candles",
+        "price": 34.99,
+        "description": "Soy wax candle with moonstone and white sage",
+        "image": "img/savpeppcandlenobg.png",
+        "featured": true,
+        "ingredients": ["Soy Wax", "White Sage", "Moonstone", "Essential Oil Blend"],
+        "weight": "8 oz",
+        "inStock": true
+      },
+      {
+        "id": 4,
+        "name": "Eucalyptus Mint Soap",
+        "category": "soap",
+        "price": 12.99,
+        "description": "Refreshing soap bar with eucalyptus and peppermint",
+        "image": "img/savgingnobg.png",
+        "featured": false,
+        "ingredients": ["Olive Oil", "Coconut Oil", "Eucalyptus Oil", "Peppermint Oil"],
+        "weight": "5 oz",
+        "inStock": true
+      },
+      {
+        "id": 5,
+        "name": "Dead Sea Detox Salts",
+        "category": "bath_salts",
+        "price": 29.99,
+        "description": "Premium dead sea salt blend with activated charcoal",
+        "image": "img/savpeppcandlenobg.png",
+        "featured": false,
+        "ingredients": ["Dead Sea Salt", "Activated Charcoal", "Essential Oils", "Dried Herbs"],
+        "weight": "16 oz",
+        "inStock": true
+      },
+      {
+        "id": 6,
+        "name": "New Moon Manifestation Candle",
+        "category": "candles",
+        "price": 34.99,
+        "description": "Black soy wax candle with obsidian and herbs",
+        "image": "img/savpeppcandlenobg.png",
+        "featured": false,
+        "ingredients": ["Soy Wax", "Obsidian", "Herb Blend", "Essential Oils"],
+        "weight": "8 oz",
+        "inStock": true
+      }
+    ],
+    "reviews": [
+      {
+        "id": 1,
+        "name": "Sarah M.",
+        "rating": 5,
+        "review": "The lavender soap is absolutely divine! My skin has never felt better.",
+        "date": "2023-11-15"
+      },
+      {
+        "id": 2,
+        "name": "Michael R.",
+        "rating": 5,
+        "review": "These bath salts are a game changer for my evening ritual.",
+        "date": "2023-11-10"
+      },
+      {
+        "id": 3,
+        "name": "Emma L.",
+        "rating": 4,
+        "review": "Beautiful candles with amazing scents. Will definitely buy again!",
+        "date": "2023-11-05"
+      }
+    ],
+    "faqs": [
+      {
+        "id": 1,
+        "question": "Are your products all natural?",
+        "answer": "Yes, we use only natural ingredients sourced from trusted suppliers."
+      },
+      {
+        "id": 2,
+        "question": "Do you ship internationally?",
+        "answer": "Yes, we ship worldwide. International shipping rates apply."
+      },
+      {
+        "id": 3,
+        "question": "What is your return policy?",
+        "answer": "We accept returns within 30 days of purchase for unused items in original packaging."
+      },
+      {
+        "id": 4,
+        "question": "Are your products cruelty-free?",
+        "answer": "We never test on animals and only work with cruelty-free suppliers."
+      }
+    ],
+    "membership_benefits": [
+      {
+        "id": 1,
+        "title": "Monthly Mystery Box",
+        "description": "Receive a curated box of premium products valued at $100+ each month",
+        "value": "$100+"
+      },
+      {
+        "id": 2,
+        "title": "Early Access",
+        "description": "Shop new collections 24 hours before public release",
+        "value": "Priceless"
+      },
+      {
+        "id": 3,
+        "title": "Member Discount",
+        "description": "Enjoy 15% off all regular-priced items",
+        "value": "15% off"
+      },
+      {
+        "id": 4,
+        "title": "Free Shipping",
+        "description": "Free standard shipping on all orders",
+        "value": "$8.99/order"
+      }
+    ]
+  }
