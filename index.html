@@ -1,0 +1,406 @@
+<!DOCTYPE html[v0-no-op-code-block-prefix]>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savonnerie Macabre - Not Your Everyday Apothecary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #f4ede4;
+            --accent: #9b8579;
+            --text: #333333;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--text);
+            background-color: var(--secondary);
+        }
+
+        .navbar {
+            background-color: transparent;
+            padding: 1.5rem 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(244, 237, 228, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .nav-link {
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin: 0 1rem;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hero-section {
+            height: 90vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .featured-products {
+            padding: 5rem 0;
+        }
+
+        .product-card {
+            background: white;
+            border: none;
+            border-radius: 0;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .reviews-section {
+            background-color: var(--primary);
+            color: white;
+            padding: 5rem 0;
+        }
+
+        .review-card {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            padding: 2rem;
+            margin: 1rem 0;
+        }
+
+        .faq-section {
+            padding: 5rem 0;
+        }
+
+        .accordion-button {
+            background: transparent;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+        }
+
+        .contact-section {
+            background-color: var(--primary);
+            color: white;
+            padding: 5rem 0;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 1rem;
+        }
+
+        .footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                background-color: rgba(244, 237, 228, 0.95);
+            }
+            
+            .hero-section {
+                height: 70vh;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Savonnerie Macabre</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="membership.html">Membership</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="background-image: url('img/savpeppcandle.jpg'); background-size: cover; background-position: center; height: 80vh; background-repeat: no-repeat; background-attachment: fixed;">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="display-3 mb-4">Natural Beauty & Wellness</h1>
+                <p class="lead mb-4">Handcrafted with intention, made for your ritual</p>
+                <a href="products.html" class="btn btn-outline-light btn-lg">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="text-center mb-5">Featured Products</h2>
+            <div class="row" id="featured-products">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Customer Reviews</h2>
+            <div class="row" id="reviews">
+                <!-- Reviews will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <!-- FAQs will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h2 class="text-center mb-5">Get in Touch</h2>
+                    <form class="contact-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-outline-light btn-lg">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <img src="img/savmaclogo.jpg" alt="Savonnerie Macabre" style="height: autopx; width: 100%; margin-bottom: 40px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="footer-title">LUNA</h3>
+                    <p>Handcrafted natural beauty & wellness products for your daily ritual.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="mb-4">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="products.html">Shop All</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="mb-4">Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <p>&copy; 2023 LUNA Apothecary. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Load featured products
+            $.getJSON('data/products.json', function(data) {
+                const featuredProducts = data.products.filter(product => product.featured);
+                const productsHtml = featuredProducts.map(product => `
+                    <div class="col-md-4 mb-4">
+                        <div class="product-card" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); height: 470px;">
+                            <img src="${product.image}" class="img-fluid mb-3" alt="${product.name}" style="height: 210px; width: 100%;">
+                            <h3>${product.name}</h3>
+                            <p>${product.description}</p>
+                            <p class="price">$${product.price}</p>
+                            
+                                <button class="btn btn-outline-dark">Add to Cart</button>
+                                
+                            
+                        </div>
+                    </div>
+                `).join('');
+                $('#featured-products').html(productsHtml);
+            });
+
+            // Load reviews
+            $.getJSON('data/products.json', function(data) {
+                const reviewsHtml = data.reviews.map(review => `
+                    <div class="col-md-4">
+                        <div class="review-card">
+                            <div class="stars mb-3">
+                                ${'★'.repeat(review.rating)}${'☆'.repeat(5-review.rating)}
+                            </div>
+                            <p>${review.review}</p>
+                            <p class="reviewer">- ${review.name}</p>
+                        </div>
+                    </div>
+                `).join('');
+                $('#reviews').html(reviewsHtml);
+            });
+
+            // Load FAQs
+            $.getJSON('data/products.json', function(data) {
+                const faqsHtml = data.faqs.map((faq, index) => `
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button ${index === 0 ? '' : 'collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#faq${faq.id}">
+                                ${faq.question}
+                            </button>
+                        </h2>
+                        <div id="faq${faq.id}" class="accordion-collapse collapse ${index === 0 ? 'show' : ''}" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                ${faq.answer}
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                $('#faqAccordion').html(faqsHtml);
+            });
+
+            // Navbar scroll effect
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 50) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
+            });
+
+            // Contact form submission
+            $('.contact-form').submit(function(e) {
+                e.preventDefault();
+                // Add your form submission logic here
+                alert('Thank you for your message. We will get back to you soon!');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>
